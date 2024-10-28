@@ -70,7 +70,7 @@ class Email extends BaseConfig
     public bool $wordWrap = true;
 
     /**
-     * Character count to wrap at
+     * Characters count to wrap at
      */
     public int $wrapChars = 76;
 
@@ -80,7 +80,7 @@ class Email extends BaseConfig
     public string $mailType = 'text';
 
     /**
-     * Character set (utf-8, iso-8859-1, etc.)
+     * Characters set (utf-8, iso-8859-1, etc.)
      */
     public string $charset = 'UTF-8';
 

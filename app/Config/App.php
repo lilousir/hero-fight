@@ -137,7 +137,7 @@ class App extends BaseConfig
 
     /**
      * --------------------------------------------------------------------------
-     * Default Character Set
+     * Default Characters Set
      * --------------------------------------------------------------------------
      *
      * This determines which character set is used by default in various methods
