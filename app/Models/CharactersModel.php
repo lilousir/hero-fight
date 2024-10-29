@@ -33,6 +33,13 @@ class CharactersModel extends Model
 
         return $this->findAll();
     }
+    public function getAllCharactersByUserId() {
+
+        return $this->findAll();
+    }
+
+
+
 
     public function getAllCharacter()
     {
@@ -42,6 +49,14 @@ class CharactersModel extends Model
     public function createCharacter($data)
     {
         return $this->insert($data);
+    }
+    public function createUser($data)
+    {
+        return $this->insert($data);
+    }
+    public function updateCharacter($data)
+    {
+        return $this->update($data['id'], $data);
     }
 
     public function deleteCharacter($id)

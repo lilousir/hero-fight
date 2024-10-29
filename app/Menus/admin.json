@@ -1,7 +1,7 @@
 {
       "accueil": {
         "title": "Accueil",
-        "url": "/",
+        "url": "/admin",
         "perm": "none",
         "icon": "<i class=\"nav-icon fa-solid fa-house\"></i>",
         "class": "main-menu-accueil"
