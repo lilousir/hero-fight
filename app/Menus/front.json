@@ -1,0 +1,14 @@
+{
+  "items": {
+    "title" : "Combat",
+    "url" : "/battle",
+    "icon": "<i class=\"nav-icon fa-solid fa-child-combatant\"></i>",
+    "subs" : {
+      "item": {
+        "title" : "Liste des combats",
+        "url" : "/",
+        "icon": "<i class=\"nav-icon fa-solid fa-box-open\"></i>"
+      }
+    }
+  }
+ }

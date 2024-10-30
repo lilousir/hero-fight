@@ -68,7 +68,7 @@ abstract class BaseController extends Controller
      */
     protected $title = 'Home';
 
-    protected $title_prefix = 'Gest-Collec';
+    protected $title_prefix = 'Herofight';
 
     /**
      * Menu Management

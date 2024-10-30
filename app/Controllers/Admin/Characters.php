@@ -14,14 +14,16 @@ class Characters extends BaseController
     {
         if ($id) {
             $character = model("CharactersModel")->getCharacterById($id);
-                return $this->view('/admin/characters/characters', ['characters' => $character], true);
+            return $this->view('/admin/characters/characters', ['characters' => $character], true);
 
         } else {
             $characters = model("CharactersModel")->getAllCharactersByUserId();
             return $this->view('/admin/characters/index', ['characters' => $characters], true);
         }
     }
-    public function postupdate() {
+
+    public function postupdate()
+    {
 
         $data = $this->request->getPost();
 
@@ -37,37 +39,37 @@ class Characters extends BaseController
         return $this->redirect("/admin/characters");
     }
 
-    public function postSearchCharacter()
+    public function postcreate()
     {
-        $CharactersModel = model('App\Models\CharactersModel');
+        $data = $this->request->getPost();
+        $cm = Model("CharactersModel");
 
-        // Paramètres de pagination et de recherche envoyés par DataTables
-        $draw        = $this->request->getPost('draw');
-        $start       = $this->request->getPost('start');
-        $length      = $this->request->getPost('length');
-        $searchValue = $this->request->getPost('search')['value'];
+        $newCharactersId = $cm->createCharacters($data);
+        if ($newCharactersId) {
+            $this->success("Le personnage à bien été ajouté.");
+            $this->redirect("/admin/characters");
+        } else {
 
-        // Obtenez les informations sur le tri envoyées par DataTables
-        $orderColumnIndex = $this->request->getPost('order')[0]['column'] ?? 0;
-        $orderDirection = $this->request->getPost('order')[0]['dir'] ?? 'asc';
-        $orderColumnName = $this->request->getPost('columns')[$orderColumnIndex]['data'] ?? 'id';
+            $errors = $cm->errors();
+            foreach ($errors as $error) {
 
-
-        // Obtenez les données triées et filtrées
-        $data = $CharactersModel->getPaginatedCharacter($start, $length, $searchValue, $orderColumnName, $orderDirection);
-
-        // Obtenez le nombre total de lignes sans filtre
-        $totalRecords =  $CharactersModel->getTotalCharacter();
-
-        // Obtenez le nombre total de lignes filtrées pour la recherche
-        $filteredRecords =  $CharactersModel->getFiltereCharacter($searchValue);
-
-        $result = [
-            'draw'            => $draw,
-            'recordsTotal'    => $totalRecords,
-            'recordsFiltered' => $filteredRecords,
-            'data'            => $data,
-        ];
-        return $this->response->setJSON($result);
+                $this->error($error);
+            }
+            $this->redirect("/admin/characters/new");
+        }
     }
-    }
+
+    public function getdeletecharacters($id)
+    {
+        $cm = model('CharactersModel');
+            if ($cm->deleteCharacter($id)) {
+                $this->success("Personnage supprimé");
+            } else {
+                $this->error("Personnage non supprimé");
+            }
+           return $this->redirect('/admin/characters');
+        }
+
+
+
+}

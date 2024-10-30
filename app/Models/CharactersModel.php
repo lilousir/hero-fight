@@ -10,7 +10,7 @@ class CharactersModel extends Model
     protected $primaryKey = 'id';
 
     // Champs permis pour les opérations d'insertion et de mise à jour
-    protected $allowedFields = ['id', 'id_user', 'name', 'strength', 'created_at', 'updated_at', 'deleted_at'];
+    protected $allowedFields = ['id', 'id_user', 'name', 'strength', 'constitution','agility','experience', 'level', 'created_at', 'updated_at', 'deleted_at'];
 
     // Activer le soft delete
     protected $useSoftDeletes = true;
@@ -50,9 +50,10 @@ class CharactersModel extends Model
     {
         return $this->insert($data);
     }
-    public function createUser($data)
+    public function createCharacters($data)
     {
         return $this->insert($data);
+
     }
     public function updateCharacter($data)
     {

@@ -17,6 +17,7 @@
                     <th>Experience</th>
                     <th>Niveau</th>
                     <th>Modifier</th>
+                    <th>Supprimer</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -26,16 +27,17 @@
                     <tr>
                         <td><?= $character['id'] ?></td>
                         <td><?= $character['id_user'] ?></td>
+                        <td><?= $character['name'] ?></td>
                         <td><?= $character['strength'] ?></td>
                         <td><?= $character['constitution'] ?></td>
                         <td><?= $character['agility'] ?></td>
                         <td><?= $character['experience'] ?></td>
                         <td><?= $character['level'] ?></td>
 
-                        <td> <a href="/admin/comment/delete/<?=$character['id']; ?>" class="btn btn-outline-danger">
-                                <i class="fa-regular fa-trash-can"></i>
+                        <td> <a href="/admin/characters/<?=$character['id']; ?>" class="btn btn-outline-warning">
+                                <i class="fa-solid fa-pen-clip"></i>
                             </a></td>
-                        <td> <a href="/admin/comment/delete/<?=$character['id']; ?>" class="btn btn-outline-danger">
+                        <td> <a href="/admin/characters/deletecharacters/<?=$character['id']; ?>" class="btn btn-outline-danger">
                                 <i class="fa-regular fa-trash-can"></i>
                             </a></td>
                     </tr>

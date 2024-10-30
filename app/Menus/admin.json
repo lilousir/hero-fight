@@ -34,26 +34,22 @@
          }
         }
       },
-      "produits": {
-        "title": "Produits",
-        "url": "/Product",
+      "combat": {
+        "title": "combats",
+        "url": "/",
         "perm": "none",
         "icon": "<i class=\"nav-icon fas fa-file-invoice-dollar\"></i>",
         "class": "",
         "subs": {
-          "search": {
-            "title": "Rechercher un produit",
-            "url": "/Product/search",
-            "icon": "<i class=\"nav-icon fas fa-magnifying-glass\"></i>"
+
+          "Combat": {
+            "title": "Combats",
+            "url": "/admin/combats",
+            "icon": "<i class=\"nav-icon fa-solid fa-hand-fist\"></i>"
           },
-          "newproduct": {
-            "title": "Nouveau Produit",
-            "url": "/Product/new",
-            "icon": "<i class=\"nav-icon fas fa-file-circle-plus\"></i>"
-          },
-          "imports": {
-            "title": "Import en masse",
-            "url": "/Imports/",
+          "Historique": {
+            "title": "Historique des combats",
+            "url": "/admin/",
             "icon": "<i class=\"nav-icon fas fa-download\"></i>"
           },
           "export": {
